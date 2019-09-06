@@ -17,14 +17,14 @@ public:
     /// @brief Default constructor.
     /// The time is set to 00:00:00.
     /// @post hr = 0; min = 0; sec = 0.
-    
+
     clockType();
 
     clockType(int hours, int minutes, int seconds);
-    
+
     /// functions prototypes
 // ============================================================================
-    /// 
+    ///
     void setHours(int hours);
     void setMinutes(int minutes);
     void setSeconds(int seconds);
@@ -32,7 +32,7 @@ public:
     void incrementHours();
     void incrementMinutes();
     void incrementSeconds();
-    
+
     void printTime();
     int getHours() const;
     int getMinutes() const;

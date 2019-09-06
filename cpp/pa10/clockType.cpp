@@ -52,7 +52,7 @@ void clockType::setSeconds(int seconds) {
 
 void clockType::incrementHours() {
     hr++;
-    
+
     if(hr == 24) {
         hr = 0;
     }
@@ -60,7 +60,7 @@ void clockType::incrementHours() {
 
 void clockType::incrementMinutes() {
     min++;
-    
+
     if(min == 60) {
         min = 0;
         incrementHours();
@@ -69,7 +69,7 @@ void clockType::incrementMinutes() {
 
 void clockType::incrementSeconds() {
     sec++;
-    
+
     if(sec == 60) {
         sec = 0;
         incrementMinutes();
@@ -121,17 +121,17 @@ void clockType::diff(const clockType& other) const {
                  other.getMinutes() * 60  +
                  other.getSeconds() - elapsed()
                 );
-                
-    int diff_hours= ((diff >= 0) ? 
-        (other.getHours() - hr) : 
+
+    int diff_hours= ((diff >= 0) ?
+        (other.getHours() - hr) :
         (hr - other.getHours()));
 
-    int diff_minutes= ((diff >= 0) ? 
-        (other.getMinutes() - min) : 
+    int diff_minutes= ((diff >= 0) ?
+        (other.getMinutes() - min) :
         (min - other.getMinutes()));
 
-    int diff_seconds= ((diff >= 0) ? 
-        (other.getSeconds() - sec) : 
+    int diff_seconds= ((diff >= 0) ?
+        (other.getSeconds() - sec) :
         (sec - other.getSeconds()));
 
     if(diff_seconds < 0) {
@@ -147,7 +147,7 @@ void clockType::diff(const clockType& other) const {
         diff_minutes += 60;
         diff_hours--;
     }
-    
+
     std::cout
     << std::setfill('0')
     << std::setw(2) << diff_hours << ':'
